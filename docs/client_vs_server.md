@@ -1,4 +1,4 @@
-# The Benefits of Fat-Client Archetecture
+# The Benefits of Fat-Client Architecture
 
 ![alt tag](https://github.com/everythingspirals/react-relay/blob/master/docs/diagram.jpg)
 *This diagram represents the data flow of a fat-client architecture. In this diagram the API would serve several hours of guide data in a single response. This dataset would be parsed on the client, and would only need to be re-retreived at a set interval, such as every 30 minutes.* 
