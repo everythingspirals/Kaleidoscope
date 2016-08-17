@@ -1,6 +1,6 @@
 # The Benefits of Fat-Client Archetecture
 
-![alt tag](https://raw.githubusercontent.com/everythingspirals/react-relay/master/diagram.jpg)
+![alt tag](https://raw.githubusercontent.com/everythingspirals/react-relay/docs/master/diagram.jpg)
 
 ## Client-side Logic
 
