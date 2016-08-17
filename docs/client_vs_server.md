@@ -20,7 +20,4 @@ Given then small and relatively-fixed size of the dataset, all data could be dow
 
 1. Not Scalable - If the dataset increases to a size that is impractical to download to the client, this approach will no longer be applicable.
 
-2. No seperation of concerns - Storing the business logic as a library 
-
-
 
