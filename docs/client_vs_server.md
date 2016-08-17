@@ -1,11 +1,6 @@
-# Storing Logic on the Client vs the Server
-
-
-
+# The Benefits of Fat-Client Archetecture
 
 ![alt tag](https://raw.githubusercontent.com/everythingspirals/react-relay/master/diagram.jpg)
-
-
 
 ## Client-side Logic
 
@@ -27,15 +22,5 @@ Given then small and relatively-fixed size of the dataset, all data could be dow
 
 2. No seperation of concerns - Storing the business logic as a library 
 
-## Server-side Logic
 
-#### Overview
-...
-
-
-#### Benefits
-...
-
-#### Disadvantages
-...
 
