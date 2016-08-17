@@ -4,7 +4,7 @@
 
 *This diagram represents the data flow of a fat-client architecture. In this diagram the API would serve several hours of guide data in a single response. This dataset would be parsed on the client, and would only need to be re-retreived at a set interval, such as every 30 minutes.* 
 
-*One requests would trigger the cache to be primed, and would consitute a cache miss, however all subsequent requests would retreive data directly from the cache proxy, thus eliminating considerable latency.*
+*The first requset to the server would consitute a cache miss, and require the Apache Traffic server to be loaded. However all subsequent requests would retreive data directly from the cache proxy, thus eliminating considerable latency.*
 
 ## Overview
 
