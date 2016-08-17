@@ -1,9 +1,9 @@
 # The Benefits of Fat-Client Archetecture
 
 ![alt tag](https://github.com/everythingspirals/react-relay/blob/master/docs/diagram.jpg)
-*This diagram represents the data flow of a fat-client architecture. In this diagram the API would serve several hours of guide data in a single response. This dataset would be parsed on the client, and would only need to be re-retreived at a set interval, such as every 30 minutes. 
+*This diagram represents the data flow of a fat-client architecture. In this diagram the API would serve several hours of guide data in a single response. This dataset would be parsed on the client, and would only need to be re-retreived at a set interval, such as every 30 minutes.* 
 
-One requests would trigger the cache to be primed, and would consitute a cache miss, however all subsequent requests would retreive data directly from the cache proxy, thus eliminating considerable latency.*
+*One requests would trigger the cache to be primed, and would consitute a cache miss, however all subsequent requests would retreive data directly from the cache proxy, thus eliminating considerable latency.*
 
 ## Client-side Logic
 
