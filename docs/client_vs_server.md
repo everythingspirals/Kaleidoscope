@@ -5,13 +5,11 @@
 
 *One requests would trigger the cache to be primed, and would consitute a cache miss, however all subsequent requests would retreive data directly from the cache proxy, thus eliminating considerable latency.*
 
-## Client-side Logic
-
-#### Overview
+## Overview
 
 Given then small and relatively-fixed size of the dataset, all data could be downloaded directly to the client from a cache proxy at a certain interval. This data could then be parsed on the client using standard Javascript functions such as Array.Filter, Array.Map, etc. 
 
-#### Benefits
+## Benefits
 
 1. Performance - Latency is avoided by removing the need for HTTP requests to the server.
 
@@ -22,7 +20,7 @@ Given then small and relatively-fixed size of the dataset, all data could be dow
 4. Simplicity - Several hours of guide data could be retreived at a time, eliminating difficult edge cases that would have to be dealt with working with a RESTful API comprised of time-sensitive data.
 
 
-#### Disadvantages
+## Disadvantages
 
 1. Not Scalable - If the dataset increases to a size that is impractical to download to the client, this approach will no longer be applicable.
 
