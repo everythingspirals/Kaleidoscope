@@ -3,7 +3,7 @@ Benefits and Disadvantages in Comparison to a Traditional REST API
 
 
 
-![alt tag](https://raw.githubusercontent.com/everythingspirals/react-relay/docs/master/diagram2.jpg)
+![alt tag](https://github.com/everythingspirals/kaleidoscope/blob/docs/master/diagram2.jpg)
 
 
 

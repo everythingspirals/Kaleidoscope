@@ -1,4 +1,5 @@
 ## Kaleidoscope
+![alt tag](https://github.com/everythingspirals/kaleidoscope/blob/master/docs/screenshot.png)
 
 ## Overview
 
