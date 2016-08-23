@@ -1,4 +1,32 @@
 .title{
-  background:white !important;
-  margin-top:50px;
+  position:absolute;
+  height:150px;
+  width:100%;
+  margin:0;
+  border-bottom:5px solid #111;
+}
+
+.title .title-cover{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-position: top center;
+  background-size:cover;
+  z-index:1;
+}
+
+.title .title-text{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  z-index:100;
+  background:rgba(0,0,0,0.5);
+
+  color:white;
+  font-size:72px;
+  line-height:150px;
+  font-family: 'Raleway', sans-serif;
+
+  text-align:center;
 }

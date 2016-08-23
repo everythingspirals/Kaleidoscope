@@ -24,7 +24,7 @@ module.exports = {
 
     //Output
     output: {
-        filename: './build/public/bundle.js'
+        filename: './build/bundle.js'
     },
 
     //Loaders
@@ -38,7 +38,7 @@ module.exports = {
     //Plugins
     plugins: [
       new CopyWebpackPlugin([
-        {from: './src/public', to: './build/public'}
+        {from: './src/public', to: './build'}
       ])
     ],
 

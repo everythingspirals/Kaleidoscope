@@ -1,0 +1,22 @@
+.show-card{
+  width:370px;
+  margin:25px;
+  display:inline-block;
+  cursor:pointer;
+  border: 1px solid #ccc;
+  float:left;
+}
+
+.show-card .preview{
+  width:370px;
+  height:200px;
+}
+
+.show-card img{
+  width:250px;
+  height:350px;
+}
+
+.show-card .card-title{
+  text-align:center;
+}

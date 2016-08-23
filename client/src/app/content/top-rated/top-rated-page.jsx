@@ -3,29 +3,36 @@ import Falcor from 'falcor';
 import ShowList from 'common/show-list/show-list.jsx';
 import Gallery from 'common/gallery/gallery.jsx';
 import Title from 'common/title/title.jsx';
-import model from 'models/shows-model.js';
+import Guide from 'lib/guide';
+import Toolbar from 'common/toolbar/toolbar';
 
 export default React.createClass({
   getInitialState(){
     return {
-      shows : {}
+      shows : [],
     }
   },
 
   componentWillMount() {
-    this.getContent();
+    this.getShows();
   },
 
-  getContent() {
-    model.get(['shows', {from: 0, to: 7}, ['title','poster']])
-        .then(response => this.setState({shows: response.json.shows}))
+  getShows() {
+    let guide = new Guide();
+    guide.init().then(()=>{
+      this.setState({
+        shows: guide.getCurrentShowsByRating()
+      });
+    })
   },
 
     render() {
+      console.log(this.state.shows);
       return (
         <div>
-        <Title title="Highest Rated"/>
-        <Gallery>
+        <Title title="Top Rated" cover="build/img/top_rated.jpg"/>
+
+      <Gallery>
         <ShowList shows={this.state.shows}/>
         </Gallery>
       </div>

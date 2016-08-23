@@ -3,11 +3,13 @@ import titleStyle from './title.css';
 
 export default React.createClass({
     render() {
+      let style = {
+        backgroundImage: 'url(' + this.props.cover + ')'
+      };
       return (
-        <section className="jumbotron text-xs-center title">
-           <div className="container">
-             <h1 className="display-3">{this.props.title}</h1>
-           </div>
+        <section className="title">
+          <div className="title-cover" style={style}/>
+          <div className="title-text">{this.props.title}</div>
          </section>
       )
     }
