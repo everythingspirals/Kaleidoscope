@@ -1,19 +1,13 @@
-## React + Relay
+## Kaleidoscope
 
 ## Overview
 
-A demo app using ReactJS with Falcor.
+A prototype of the Personal View Mosaic application.
 
 ## Quick Start for Developers
 
 ### Install Core Dependencies
 1. [install nodejs](http://nodejs.org/)
-
-### Server Installation
-1. Navigate to the server folder.
-2. Install all Node Modules defined in package.json
-    * npm install
-3. Start server with the command 'node server'
 
 ### Client Installation
 1. Navigate to the client folder.
@@ -25,6 +19,11 @@ A demo app using ReactJS with Falcor.
     * npm run dist
 5. To view build, run 'http-server' or 'npm run dev' and navigate to localhost:8080
 
+### Server Installation (To Be Developed Later)
+1. Navigate to the server folder.
+2. Install all Node Modules defined in package.json
+    * npm install
+3. Start server with the command 'node server'
 
 ### Browser
 
