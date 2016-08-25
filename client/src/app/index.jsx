@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-
+import Store from 'redux/store';
+import {Provider} from 'react-redux';
 import RatingPage from 'content/top-rated/top-rated-page.jsx';
 import ComedyPage from 'content/comedy/comedy.jsx';
 import DramaPage from 'content/drama/drama.jsx';
@@ -11,7 +12,8 @@ import Main from 'common/main/main.jsx';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 
 ReactDom.render(
-  (<Router history={hashHistory}>
+  (<Provider store={Store}>
+    <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={RatingPage}/>
       <Route path="top-rated" component={RatingPage}/>
@@ -19,6 +21,6 @@ ReactDom.render(
       <Route path="drama" component={DramaPage}/>
       <Route path="details/:id" component={DetailsPage}/>
     </Route>
-
-  </Router>),
+    </Router>
+  </Provider>),
   document.querySelector('#root'))

@@ -38,7 +38,7 @@ export default class Guide{
   getCurrentShowsByGenre(genre){
     return this.currentShows.filter(show => {
       return show.Genre.indexOf(genre) > -1;
-    }).slice(0,7);
+    }).slice(0,6);
   }
 
   getCurrentShowsByRating(){
@@ -55,6 +55,6 @@ export default class Guide{
       }
 
       return 0;
-    });
+    }).slice(0,6);
   }
 }

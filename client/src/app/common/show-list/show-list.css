@@ -1,4 +1,9 @@
-.shows-list{
+.show-list{
   position:absolute;
   background:#ddd;
+}
+
+.show-list .grid-node{
+  display:inline-block;
+    float:left;
 }

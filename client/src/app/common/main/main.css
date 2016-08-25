@@ -1,7 +1,3 @@
-#root{
-  position:absolute;
+html,body{
   width:1280px;
-  height:720px;
-  overflow:scroll;
-  background:#ddd;
 }

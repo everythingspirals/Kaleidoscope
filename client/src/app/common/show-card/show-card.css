@@ -1,14 +1,12 @@
 .show-card{
   width:370px;
   margin:25px;
-  display:inline-block;
   cursor:pointer;
   border: 1px solid #ccc;
-  float:left;
 }
 
 .show-card .preview{
-  width:370px;
+  width:367px;
   height:200px;
 }
 

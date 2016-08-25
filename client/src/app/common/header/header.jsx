@@ -5,11 +5,8 @@ export default React.createClass({
     render() {
       return (
         <nav className="header">
-
-
             <div className="header-title">K</div>
             <ul className="header-nav">
-
              <li className="header-nav-item">
                <a href="#/top-rated">Top Rated</a>
              </li>
@@ -19,9 +16,7 @@ export default React.createClass({
              <li className="header-nav-item">
                <a href="#/drama">Drama</a>
              </li>
-
            </ul>
-
         </nav>
       )
     }

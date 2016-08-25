@@ -2,7 +2,8 @@
   background:#ddd;
   border-top:1px solid #ccc;
   padding-top:25px;
-  width:100%;
+  width:1280px;
+  min-height:720px;
   position:absolute;
   top:250px;
 }
