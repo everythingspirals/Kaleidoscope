@@ -1,20 +1,64 @@
 .show-card{
-  width:370px;
-  margin:25px;
+  width:375px;
+  height:254px;
+  overflow:hidden;
+  margin:50px 25px;
   cursor:pointer;
-  border: 1px solid #ccc;
+  border-width:2px !important;
+  border-style:solid !important;
+  border-color: #111 !important;
+  -webkit-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 }
 
-.show-card .preview{
-  width:367px;
+.show-card .preview, .show-preview{
+  width:372px;
   height:200px;
+  overflow:hidden;
 }
+
+
 
 .show-card img{
   width:250px;
-  height:350px;
+  height:270px;
 }
 
-.show-card .card-title{
+.show-card a{
+  text-decoration: none;
+  color:#333;
+}
+.show-description{
+  display:block;
+  width:375px;
+  overflow:hidden;
+  height:50px;
+}
+.show-rank{
+  width:50px;
+  height:50px;
+  line-height:50px;
   text-align:center;
+  color:white;
+  background:#333;
+  font-size:40px;
+    float:left;
+}
+.show-card .show-title{
+
+  width:272px;
+  line-height:50px;
+  float:left;background:#333;
+  color:white;
+  padding-left:25px;
+  font-size:18px;
+}
+.show-card .show-channel{
+  height:50px;
+  width:50px;
+    float:left;
+}
+.grid.active .grid-node.active .show-card{
+  border-color: red !important;
 }

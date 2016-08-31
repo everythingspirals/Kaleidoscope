@@ -1,14 +1,21 @@
 // Libraries
-import GraphqlHTTP from 'express-graphql';
-import Express from 'express';
-import {Schema} from './schema/schema.js';
+import fs from 'fs';
+import express from 'express';
 
-Express()
-  .use('/graphql', GraphqlHTTP({
-    schema: Schema,
-    pretty: true,
-    graphiql: true
-  }))
-  .listen(1337);
+let app = express();
 
-console.log('GraphQL server running on http://localhost:3000/graphql');
+app.get("/shows", function(req,res){
+  res.send("Welcome to the desert of the real.");
+});
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.use(express.static('public'));
+
+app.listen(1337, ()=>{
+  console.log("Server started on port 1337...")
+});

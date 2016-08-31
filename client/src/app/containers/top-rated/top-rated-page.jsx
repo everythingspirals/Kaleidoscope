@@ -4,6 +4,7 @@ import Gallery from 'common/gallery/gallery.jsx';
 import Title from 'common/title/title.jsx';
 import Guide from 'lib/guide';
 
+
 export default React.createClass({
   getInitialState(){
     return {
@@ -19,16 +20,16 @@ export default React.createClass({
     let guide = new Guide();
     guide.init().then(()=>{
       this.setState({
-        shows: guide.getCurrentShowsByGenre("Drama")
+        shows: guide.getShowsByRating()
       });
     })
   },
-  render() {
+
+    render() {
       return (
         <div>
-        <Title title="Drama" cover="build/img/drama.jpg"/>
       <Gallery>
-          <ShowList shows={this.state.shows}/>
+        <ShowList shows={this.state.shows}/>
         </Gallery>
       </div>
       )

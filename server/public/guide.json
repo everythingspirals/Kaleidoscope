@@ -1,7 +1,8 @@
 {
    "channels":[
       {
-         "name":"ABC",
+         "name":"USA",
+         "logo":"//logo.clearbit.com/usanetwork.com",
          "shows":[
             {
                "id":"3",
@@ -31,7 +32,8 @@
          ]
       },
       {
-         "name":"CBS",
+         "name":"FX",
+         "logo":"//logo.clearbit.com/fxnetworks.com",
          "shows":[
             {
                "id":"2",
@@ -61,7 +63,8 @@
          ]
       },
       {
-         "name":"KTLA",
+         "name":"Netflix",
+         "logo":"//logo.clearbit.com/netflix.com",
          "shows":[
             {
                "id":"1",
@@ -92,6 +95,7 @@
       },
       {
          "name":"HBO",
+         "logo":"//logo.clearbit.com/hbo.com",
          "shows":[
             {
                "id":"0",
@@ -121,7 +125,8 @@
          ]
       },
       {
-         "name":"USA",
+         "name":"ESPN",
+         "logo":"//logo.clearbit.com/espn.co.uk",
          "shows":[
             {
                "id":"5",
@@ -152,6 +157,7 @@
       },
       {
          "name":"TNT",
+         "logo":"//logo.clearbit.com/tntdrama.com",
          "shows":[
             {
                "id":"4",
@@ -182,6 +188,7 @@
       },
       {
          "name":"NBC",
+         "logo":"//logo.clearbit.com/nbc.com",
          "shows":[
             {
                "id":"10",
@@ -211,7 +218,8 @@
          ]
       },
       {
-         "name":"ABC",
+         "name":"Cartoon Network",
+         "logo":"//logo.clearbit.com/cartoonnetwork.com",
          "shows":[
             {
                "id":"6",
@@ -242,6 +250,7 @@
       },
       {
          "name":"FOX",
+         "logo":"//logo.clearbit.com/fox.com",
          "shows":[
             {
                "id":"7",

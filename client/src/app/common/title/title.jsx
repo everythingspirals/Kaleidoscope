@@ -4,7 +4,7 @@ import titleStyle from './title.css';
 export default React.createClass({
     render() {
       let style = {
-        backgroundImage: 'url(' + this.props.cover + ')'
+        //backgroundImage: 'url(' + this.props.cover + ')'
       };
       return (
         <section className="title">

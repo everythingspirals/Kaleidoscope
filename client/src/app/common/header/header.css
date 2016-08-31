@@ -1,4 +1,6 @@
 .header{
+  position:absolute;
+  width:1280px;
   height:100px;
   background: #222;
   color: white;
@@ -6,6 +8,10 @@
   padding: 0px 25px;
   font-family: 'Raleway', sans-serif;
   border-bottom:2px solid #111;
+  -webkit-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+  z-index:9999;
 }
 
 .header > * {
@@ -32,7 +38,7 @@
   float: left;
 }
 
-.header .header-nav-item > a{
+.header .header-nav-item  a{
   display:block;
   text-align:center;
   color: white;
@@ -42,9 +48,13 @@
   padding:0px 25px;
 }
 
-.header .header-nav-item > a:hover, .header .header-nav-item > a:focus{
+.header .header-nav-item  a:hover, .header .header-nav-item a:focus{
   cursor:pointer;
   background:#111;
   text-decoration: none;
   border-bottom:2px solid white;
+}
+
+.grid.active .header-nav-item .grid-node.active a{
+  border:1px solid red;
 }

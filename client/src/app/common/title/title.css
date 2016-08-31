@@ -1,9 +1,9 @@
 .title{
   position:absolute;
-  height:150px;
+  height:100px;
   width:1280px;
   margin:0;
-  border-bottom:5px solid #111;
+  border-bottom:1px solid #333;
 }
 
 .title .title-cover{
@@ -21,11 +21,10 @@
   position:absolute;
   top:0;
   z-index:100;
-  background:rgba(0,0,0,0.5);
-
-  color:white;
-  font-size:72px;
-  line-height:150px;
+  background:white;
+  color:#333;
+  font-size:50px;
+  line-height:100px;
   font-family: 'Raleway', sans-serif;
 
   text-align:center;
