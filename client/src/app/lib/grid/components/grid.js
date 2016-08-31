@@ -6,7 +6,10 @@ import {connect} from 'react-redux';
 const GridComponent = React.createClass({
   componentDidMount(){
     const domNode = ReactDom.findDOMNode(this.refs.grid);
-    this.props.gridManager.registerGrid(this.props.gridId, domNode);
+    this.props.gridManager.registerGrid(this.props.gridId,
+                                        this.props.rowLength,
+                                        this.props.nodeLength,
+                                        domNode);
   },
 
   componentWillUnmount(){

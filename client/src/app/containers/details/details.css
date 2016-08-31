@@ -51,13 +51,22 @@
   width:300px;
 }
 
-.details-preview{
+.details-main{
   width:862px;
   border-color:#999 !important;
   overflow:hidden;
   -webkit-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 -moz-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+}
+
+.details-preview{
+  border:1px solid black;
+  height:362px;
+  overflow:hidden;
+}
+.grid.active .grid-node.active .details-preview{
+  border: 1px solid red !important;
 }
 
 .details-preview .preview{

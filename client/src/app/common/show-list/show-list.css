@@ -1,9 +1,19 @@
 .show-list{
   position:absolute;
   background:#ddd;
+  border-top:1px solid #ccc;
+  padding-top:25px;
+  width:1280px;
+  min-height:720px;
+  position:absolute;
+  top:100px;
 }
 
 .show-list .grid-node{
   display:inline-block;
   float:left;
+}
+
+.gallery{
+
 }

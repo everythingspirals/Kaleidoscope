@@ -15,7 +15,7 @@ export default React.createClass({
               <ShowPreview id={show.id} src={show.Preview}/>
             </div>
             <div className="show-description">
-              <div className="show-rank">1</div>
+              <div className="show-rank">{this.props.rank}</div>
               <img className="show-channel" src={show.ChannelLogo}/>
               <div className="show-title">{show.Title}</div>
             </div>

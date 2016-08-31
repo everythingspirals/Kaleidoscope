@@ -1,7 +1,6 @@
 import React from 'react';
-import Gallery from 'common/gallery/gallery.jsx';
 import Guide from 'lib/guide';
-
+import {Grid,GridNode} from 'lib/grid';
 import ShowPreview from 'common/show-preview/show-preview.jsx';
 import style from './details.css';
 
@@ -56,8 +55,15 @@ export default React.createClass({
             </div>
           </div>
 
-          <div className="details-column details-preview card">
-              <ShowPreview id={show.id} src={show.Preview}/>
+          <div className="details-column details-main card">
+            <Grid gridId="gallery">
+              <GridNode nodeId="0">
+                <div className="details-preview">
+                  <ShowPreview id={show.id} src={show.Preview}/>
+                </div>
+              </GridNode>
+            </Grid>
+
               <div className="card-block">
                 <div>
                   <legend>Plot</legend>

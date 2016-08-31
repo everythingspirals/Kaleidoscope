@@ -20,9 +20,12 @@ export default class Grid{
     this.setLeft(left);
   }
 
-  register(domNode){
+  register(rowLength, nodeLength, domNode){
     this.registered = true;
+    this.setRowLength(rowLength);
+    this.setNodeLength(nodeLength);
     this.domNode = domNode;
+    this.currentNode = 0;
   }
 
   unregister(){
@@ -84,6 +87,14 @@ export default class Grid{
 
   getNodeLength(){
     return this.nodeLength;
+  }
+
+  setNodeLength(nodeLength){
+    this.nodeLength = nodeLength;
+  }
+
+  setRowLength(rowLength){
+    this.rowLength = rowLength;
   }
 
   getCurrentNode(){

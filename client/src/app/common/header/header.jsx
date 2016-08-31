@@ -7,7 +7,7 @@ export default React.createClass({
       return (
         <nav className="header">
             <div className="header-title">PVM</div>
-            <Grid gridId="nav">
+            <Grid gridId="nav" rowLength="3" nodeLength="3">
               <ul className="header-nav">
                <li className="header-nav-item">
                  <GridNode nodeId="0" href="top-rated">

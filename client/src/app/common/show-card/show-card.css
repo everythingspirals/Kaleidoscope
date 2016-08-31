@@ -60,6 +60,6 @@ box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
   width:50px;
     float:left;
 }
-.grid.active .grid-node.active .show-card{
+.grid.active .grid-node.active .show-card, .show-card:hover{
   border-color: red !important;
 }

@@ -45,8 +45,8 @@ export default class GridManager{
     this.getCurrentGrid().updateCurrentNode(keyCode);
   }
 
-  registerGrid(gridId, domNode){
-    this.getGridById(gridId).register(domNode);
+  registerGrid(gridId, rowLength, nodeLength, domNode){
+    this.getGridById(gridId).register(rowLength, nodeLength, domNode);
   }
 
   unregisterGrid(gridId){

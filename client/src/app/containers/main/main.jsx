@@ -11,8 +11,6 @@ export default React.createClass({
       grids:[
         {
           id:"nav",
-          rowLength:3,
-          nodeLength:3,
           top:null,
           right:null,
           bottom:"gallery",
@@ -20,8 +18,6 @@ export default React.createClass({
         },
         {
           id:"gallery",
-          rowLength:3,
-          nodeLength:6,
           top:"nav",
           right:null,
           bottom:null,
