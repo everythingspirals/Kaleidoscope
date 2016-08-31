@@ -16,7 +16,7 @@
   overflow:hidden;
   border:none !important;
   border-radius:0 !important;
-  background:#333 !important;
+  background:#345 !important;
 
 }
 
@@ -40,9 +40,11 @@
 
 .details-poster{
   width:300px;
+  border-color:#999 !important;
+  overflow:hidden;
   -webkit-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
--moz-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+  box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 }
 
 .details-cast{
@@ -50,7 +52,9 @@ box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 }
 
 .details-preview{
-  width:860px;
+  width:862px;
+  border-color:#999 !important;
+  overflow:hidden;
   -webkit-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 -moz-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
