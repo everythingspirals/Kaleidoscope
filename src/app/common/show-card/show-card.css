@@ -1,0 +1,58 @@
+.show-card{
+  position:relative;
+  width:350px; height:250px;
+  overflow:hidden;
+  margin:25px 25px;
+  border:2px solid black;
+  -webkit-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+  box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+}
+
+.show-card .show-preview{
+  position:absolute;
+  top:25px;left:0;
+  z-index:0;
+  width:350px; height:200px;
+  background:black;
+}
+
+.show-description{
+  position:absolute;
+  top:0px;left:0;
+  z-index:999;
+  width:350px; height:200px;
+}
+
+.show-card .show-poster{
+  width:350px; height:200px;
+}
+
+.show-card .show-rank{
+  width:50px; height:50px;
+  line-height:50px;
+  text-align:center;
+  color:white;
+  background:#333;
+  font-size:40px;
+  float:left;
+}
+
+.show-card .show-title{
+  width:225px; height:50px;
+  line-height:50px;
+  color:white;
+  background:#333;
+  padding-left:25px;
+  font-size:18px;
+  float:left;
+}
+
+.show-card .show-channel{
+  height:50px;
+  width:50px;
+  float:left;
+}
+
+.grid.active .grid-node.active .show-card, .show-card:hover{
+  border-color: red !important;
+}
