@@ -20,12 +20,12 @@ export default React.createClass({
       }
     };
 
-    return (
-        <YouTube
+    return (<div className="show-preview"></div>
+      /*  <YouTube
           videoId={this.props.src}
           opts={opts}
           onReady={this.onReady}
-          className="show-preview"/>
+          className="show-preview"/>*/
     );
   }
 });

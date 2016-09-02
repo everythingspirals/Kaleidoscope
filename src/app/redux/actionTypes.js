@@ -1,5 +1,8 @@
 export default {
   GRID : {
-    UPDATE: 'UPDATE'
+    UPDATE: 'GRID_UPDATE'
+  },
+  GUIDE : {
+    UPDATE: 'GUIDE_UPDATE'
   }
 }

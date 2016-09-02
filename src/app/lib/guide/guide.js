@@ -1,4 +1,6 @@
 import axios from 'axios';
+import store from 'redux/store';
+import actionTypes from 'redux/actionTypes';
 
 export default class Guide{
 
@@ -16,7 +18,7 @@ export default class Guide{
     .then(response => {
       this.guideData = response.data;
       this.setCurrentShows();
-      this.build
+      this.update();
     });
   }
 
@@ -66,5 +68,12 @@ export default class Guide{
 
   getRankings(){
 
+  }
+
+  update(){
+    store.dispatch({
+      type: actionTypes.GUIDE.UPDATE,
+      guide: this
+    });
   }
 }

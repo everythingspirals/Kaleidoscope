@@ -6,14 +6,14 @@ export default React.createClass({
 
     render() {
       let show = this.props.show,
-          href = "#/details/" + this.props.show.id;
-
+          href = "#/details/" + this.props.show.id,
+          poster = {
+            backgroundImage:"url(" + show.Poster + ")"
+          };
       return (
         <div className="show-card card" onClick={this.getDetails}>
           <a href={href}>
-            <div className="show-preview">
-              <ShowPreview id={show.id} src={show.Preview}/>
-            </div>
+            <div className="show-poster" style={poster}></div>
             <div className="show-description">
               <div className="show-rank">{this.props.rank}</div>
               <img className="show-channel" src={show.ChannelLogo}/>

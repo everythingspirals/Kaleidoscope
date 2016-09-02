@@ -9,9 +9,14 @@ import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 import Main from 'containers/main/main.jsx';
 import GalleryPage from 'containers/gallery/gallery.jsx';
 import DetailsPage from 'containers/details/details.jsx';
+import {Guide} from 'lib/guide/index.js';
 
 //Init
 function init(){
+  let guide = new Guide();
+  guide.init().then(function(){
+    guide.update(guide);
+  });
 }
 
 ReactDom.render(

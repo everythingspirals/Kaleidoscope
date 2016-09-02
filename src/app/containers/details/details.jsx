@@ -1,18 +1,21 @@
 import React from 'react';
-import Guide from 'lib/guide';
+import {connect} from 'react-redux';
+
+import {Guide} from 'lib/guide/index.js';
 import Nav from 'common/nav/nav.jsx';
 import {Grid,GridNode} from 'lib/grid';
 import ShowPreview from 'common/show-preview/show-preview.jsx';
 import style from './details.css';
 
-export default React.createClass({
+
+const Details = React.createClass({
   getInitialState(){
     return {
       show : {},
       navItems: [
         {
           "name" : "Back",
-          "href" : document.referrer
+          "href" : "javascript:window.history.back()"
         },
         {
           "name" : "Play",
@@ -89,7 +92,14 @@ export default React.createClass({
           </div>
           <Nav navItems={this.state.navItems}/>
       </div>
-
       )
     }
 });
+
+const stateToProps = (state)=>{
+  return {
+    guide : state.guide.guide
+  }
+}
+
+export default connect(stateToProps)(Details);

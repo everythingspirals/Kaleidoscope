@@ -1,4 +1,6 @@
 import Grid from './grid';
+import store from 'redux/store';
+import actionTypes from 'redux/actionTypes';
 
 export default class GridManager{
 
@@ -45,8 +47,12 @@ export default class GridManager{
     this.getCurrentGrid().updateCurrentNode(keyCode);
   }
 
-  registerGrid(gridId, rowLength, nodeLength, domNode){
-    this.getGridById(gridId).register(rowLength, nodeLength, domNode);
+  registerGrid(gridId, domNode){
+    this.getGridById(gridId).register(domNode);
+  }
+
+  setGridSize(gridId, rowLength, nodeCount){
+    this.getGridById(gridId).setSize(rowLength, nodeCount);
   }
 
   unregisterGrid(gridId){
@@ -55,5 +61,12 @@ export default class GridManager{
 
   isRegistered(gridId){
     return this.getGridById(gridId).isRegistered();
+  }
+
+  update(){
+    store.dispatch({
+      type: actionTypes.GRID.UPDATE,
+      gridManager: this
+    });
   }
 }

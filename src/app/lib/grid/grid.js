@@ -20,16 +20,22 @@ export default class Grid{
     this.setLeft(left);
   }
 
-  register(rowLength, nodeCount, domNode){
-    this.registered = true;
+  register(domNode){
+      this.domNode = domNode;
+      this.registered = true;
+  }
+
+  setSize(rowLength,nodeCount){
     this.setRowLength(rowLength);
     this.setNodeCount(nodeCount);
-    this.domNode = domNode;
     this.currentNode = 0;
   }
 
   unregister(){
+    console.log("unregistering " + this.id)
     this.registered = false;
+    this.rowLength = null;
+    this.nodeCount = null;
     this.domNode = null;
   }
 
@@ -144,6 +150,7 @@ export default class Grid{
         break;
 
       case 39://right
+      console.log(nodeCount);
         if(currentNode < nodeCount - 1){
           this.currentNode++;
         }

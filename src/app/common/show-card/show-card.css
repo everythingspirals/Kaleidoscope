@@ -4,6 +4,7 @@
   overflow:hidden;
   margin:25px 25px;
   border:2px solid black;
+  font-family: 'Raleway', sans-serif;
   -webkit-box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
   box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
 }
@@ -24,7 +25,12 @@
 }
 
 .show-card .show-poster{
-  width:350px; height:200px;
+  width:350px;
+  height:200px;
+  background-size:cover;
+  background-position:center;
+  display:block;
+  margin-top:50px;
 }
 
 .show-card .show-rank{
@@ -43,7 +49,7 @@
   color:white;
   background:#333;
   padding-left:25px;
-  font-size:18px;
+  font-size:20px;
   float:left;
 }
 

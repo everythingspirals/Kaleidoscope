@@ -1,8 +1,6 @@
 import React from 'react';
 import Grid from '../grid';
 import GridManager from '../grid-manager';
-import store from 'redux/store';
-import actionTypes from 'redux/actionTypes';
 
 export default React.createClass({
 
@@ -39,10 +37,7 @@ export default React.createClass({
   },
 
   update(){
-    store.dispatch({
-      type: actionTypes.GRID.UPDATE,
-      gridManager: this.gridManager
-    });
+    this.gridManager.update();
   },
 
   render() {
