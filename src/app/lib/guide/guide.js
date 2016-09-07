@@ -14,11 +14,13 @@ export default class Guide{
   }
 
   getGuideData(){
-    return axios.get('http://localhost:1337/guide.json')
+    return axios.get('http://studio.amgapps.com:1337/guide.json')
     .then(response => {
       this.guideData = response.data;
       this.setCurrentShows();
       this.update();
+    }).catch(function (error) {
+      console.log(error);
     });
   }
 
@@ -42,7 +44,7 @@ export default class Guide{
   getShowsByGenre(genre){
     return this.currentShows.filter(show => {
       return show.Genre.indexOf(genre) > -1;
-    }).slice(0,6);
+    }).slice(0,8);
   }
 
   getShowsByRating(){
@@ -59,7 +61,7 @@ export default class Guide{
       }
 
       return 0;
-    }).slice(0,6);
+    }).slice(0,8);
   }
 
   getEntitlements(){

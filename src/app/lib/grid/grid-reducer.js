@@ -1,8 +1,7 @@
 import actionTypes from 'redux/actionTypes';
 
 const initialState = {
-  nodeIndex:0,
-  gridIndex:0
+  remoteHandler:null
 }
 
 export default function(state = initialState, action){

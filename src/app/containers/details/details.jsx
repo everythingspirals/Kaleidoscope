@@ -90,7 +90,7 @@ const Details = React.createClass({
                 </div>
               </div>
           </div>
-          <Nav navItems={this.state.navItems}/>
+          <Nav gridId="details-nav" navItems={this.state.navItems}/>
       </div>
       )
     }

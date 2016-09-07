@@ -7,8 +7,13 @@ import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 
 //Internal
 import Main from 'containers/main/main.jsx';
-import GalleryPage from 'containers/gallery/gallery.jsx';
 import DetailsPage from 'containers/details/details.jsx';
+import GalleryPage from 'containers/gallery/gallery';
+import ComedyPage from 'containers/gallery/comedy';
+import DramaPage from 'containers/gallery/drama';
+import KidsPage from 'containers/gallery/kids';
+import SportsPage from 'containers/gallery/sports';
+import TrendingPage from 'containers/gallery/trending';
 import {Guide} from 'lib/guide/index.js';
 
 //Init
@@ -25,7 +30,14 @@ ReactDom.render(
       <Route onEnter={init}>
         <Route path="/" component={Main}>
           <IndexRoute component={GalleryPage}/>
-          <Route path="gallery/:genre" component={GalleryPage}/>
+          <Route path="gallery" component={GalleryPage}>
+            <IndexRoute component={ComedyPage}/>
+            <Route path="comedy" component={ComedyPage}/>
+            <Route path="drama" component={DramaPage}/>
+            <Route path="kids" component={KidsPage}/>
+            <Route path="sports" component={SportsPage}/>
+            <Route path="trending" component={TrendingPage}/>
+          </Route>
           <Route path="details/:id" component={DetailsPage}/>
         </Route>
       </Route>

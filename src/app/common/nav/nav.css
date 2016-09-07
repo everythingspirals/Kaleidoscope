@@ -24,6 +24,6 @@
   text-decoration:none;
 }
 
-.nav .grid.active .grid-node.active{
-  border:1px solid red;
+.nav .grid.active .grid-node.active a{
+  color: red;
 }

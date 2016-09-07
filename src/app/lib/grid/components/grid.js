@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {connect} from 'react-redux';
-import Grid from '../grid';
 
 const GridComponent = React.createClass({
 
@@ -16,22 +15,26 @@ const GridComponent = React.createClass({
   componentWillReceiveProps(nextProps){
     let gridManager = nextProps.gridManager,
         gridId = nextProps.gridId,
-        rowLength = nextProps.rowLength,
-        nodeCount = nextProps.nodeCount,
         activeId = gridManager.getCurrentGrid().id;
 
     this.setActive(activeId, gridId);
+  },
 
-    if(rowLength !== this.state.rowLength ||
-       nodeCount !== this.state.nodeCount){
+  componentWillMount(){
+    let gridManager = this.props.gridManager,
+        gridId = this.props.gridId,
+        rowLength = this.props.rowLength,
+        nodeCount = this.props.nodeCount,
+        currentGrid = gridManager.getCurrentGrid(),
+        activeId = currentGrid.id;
 
-      this.setState({
-        rowLength: rowLength,
-        nodeCount: nodeCount
-      });
+    this.setActive(activeId,gridId);
+    gridManager.setGridSize(gridId, rowLength, nodeCount);
 
-      gridManager.setGridSize(gridId, rowLength, nodeCount);
-    }
+    this.setState({
+     rowLength: rowLength,
+     nodeCount: nodeCount
+    });
   },
 
   setActive(activeId, gridId){
@@ -41,14 +44,14 @@ const GridComponent = React.createClass({
   },
 
   componentDidMount: function() {
-    this.props.gridManager.registerGrid(
-        this.props.gridId,
-        ReactDom.findDOMNode(this.refs.grid)
-    );
+    let gridId = this.props.gridId,
+        domNode = ReactDom.findDOMNode(this.refs.grid);
+
+    this.props.gridManager.setDomNode(gridId,domNode);
  },
 
   componentWillUnmount(){
-    this.props.gridManager.unregisterGrid(this.props.gridId);
+    this.props.gridManager.unsetDomNode(this.props.gridId);
   },
 
   render() {

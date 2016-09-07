@@ -7,24 +7,42 @@ export default React.createClass({
   render() {
 
     let config = {
-      grids:[
+      routes:[
         {
-          id:"nav",
-          top:"gallery",
-          right:null,
-          bottom:null,
-          left:null
+          id: "gallery",
+          grids:[
+            {
+              id:"nav",
+              top:"show-list",
+              right:null,
+              bottom:null,
+              left:null
+            },
+            {
+              id:"show-list",
+              top:null,
+              right:null,
+              bottom:"nav",
+              left:null
+            }
+          ],
+          initialGrid:"nav"
         },
         {
-          id:"gallery",
-          top:null,
-          right:null,
-          bottom:"nav",
-          left:null
+          id: "details/:id",
+          grids: [
+            {
+              id:"details-nav",
+              top:null,
+              right:null,
+              bottom:null,
+              left:null
+            }
+          ],
+          initialGrid:"details-nav"
         }
-      ],
-      initialGrid:"nav"
-    }
+      ]
+    };
 
     return (
       <GridManager config={config}>

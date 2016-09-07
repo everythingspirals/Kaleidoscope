@@ -1,11 +1,13 @@
 var path = require('path'),
-    CopyWebpackPlugin = require('copy-webpack-plugin');
+    CopyWebpackPlugin = require('copy-webpack-plugin'),
+    webpack = require('webpack');
+
 
 //PostCSS Loader
 var postCSSLoader = {
       test: /\.css$/,
       loader: "style-loader!css-loader!postcss-loader"
-    };
+};
 
 //Babel Loader
 var babelLoader = {
@@ -15,12 +17,12 @@ var babelLoader = {
       query: {
           presets: ['es2015', 'react', 'stage-2']
       }
-    };
+};
 
 module.exports = {
 
     //Entry
-    entry: './src/app/index.jsx',
+    entry:  ['babel-polyfill', './src/app/app.js'],
 
     //Output
     output: {
@@ -39,7 +41,12 @@ module.exports = {
     plugins: [
       new CopyWebpackPlugin([
         {from: './src/public', to: './build'}
-      ])
+      ]),
+      new webpack.DefinePlugin({
+       'process.env':{
+         'NODE_ENV': JSON.stringify('production')
+       }
+     }),
     ],
 
     //Dev Tools

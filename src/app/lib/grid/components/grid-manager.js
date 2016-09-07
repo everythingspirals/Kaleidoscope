@@ -1,24 +1,17 @@
 import React from 'react';
-import Grid from '../grid';
-import GridManager from '../grid-manager';
+import GridManager from '../classes/grid-manager.js';
 
 export default React.createClass({
 
+  componentWillReceiveProps(nextProps){
+    let route = nextProps.children.props.route.path;
+    this.gridManager.setCurrentRoute(route);
+  },
+
   componentWillMount(){
-    let config = this.props.config,
-        gridManager = new GridManager(),
-        grid = null;
-
-    config.grids.forEach(config => {
-      grid = new Grid(config.id, config.nodeLength, config.rowLength);
-      grid.setOrientation(config.top,config.right,config.bottom,config.left);
-      gridManager.addGrid(grid);
-    });
-
-    gridManager.setCurrentGrid(config.initialGrid ||
-                               gridManager.getGridByIndex(0).getId());
-
-    this.gridManager = gridManager;
+    let route = this.props.children.props.route.path;
+    this.gridManager = new GridManager(this.props.config);
+    this.gridManager.setCurrentRoute(route);
     this.update();
   },
 
@@ -32,7 +25,7 @@ export default React.createClass({
 
   onKeydown(e){
     e.preventDefault();
-    this.gridManager.updateCurrentNode(e.keyCode);
+    this.gridManager.handleKeypress(e.keyCode);
     this.update();
   },
 
@@ -42,7 +35,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div className="grid-manager">
+      <div className="remote-handler">
         {this.props.children}
       </div>
     )

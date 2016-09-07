@@ -35,16 +35,19 @@ The dev process will open your default browser for you, give it a moment to auto
 ## Remote Control
 
 ### Overview
-To make content navigatable via remote control, use the GridManager, Grid, and GridNode components.  
+* To make content navigatable via remote control, use the **GridManager**, **Grid**, and **GridNode** components.  
 
-A Grid represents a collection of nodes with a fixed row length and quantity. Each node in the grid is refered to as a GridNode.
+* **GridNodes** are used to wrap links you want the user to be able to navigate between via remote control.
 
-A GridManager represents a collection of grids and manages their arrangement, as well as the position of the currently selected Grid and GridNode.
+* A **Grid** represents a collection of GridNodes with a fixed row length and node count. 
+
+* A **GridManager** represents a collection of **Grids**. It is responsible for managing their arrangement, as well as the position of the currently selected Grid and GridNode.
 
 ### GridManager
 
 ```Javascript
 import React from 'react';
+import style from './main.css'
 import {GridManager} from 'lib/grid';
 
 export default React.createClass({
@@ -52,24 +55,42 @@ export default React.createClass({
   render() {
 
     let config = {
-      grids:[
+      routes:[
         {
-          id:"nav",
-          top:null,
-          right:null,
-          bottom:"gallery",
-          left:null
+          id: "gallery",
+          grids:[
+            {
+              id:"nav",
+              top:"show-list",
+              right:null,
+              bottom:null,
+              left:null
+            },
+            {
+              id:"show-list",
+              top:null,
+              right:null,
+              bottom:"nav",
+              left:null
+            }
+          ],
+          initialGrid:"nav"
         },
         {
-          id:"gallery",
-          top:"nav",
-          right:null,
-          bottom:null,
-          left:null
+          id: "details/:id",
+          grids: [
+            {
+              id:"details-nav",
+              top:null,
+              right:null,
+              bottom:null,
+              left:null
+            }
+          ],
+          initialGrid:"details-nav"
         }
-      ],
-      initialGrid:"nav"
-    }
+      ]
+    };
 
     return (
       <GridManager config={config}>
@@ -79,33 +100,48 @@ export default React.createClass({
   }
 });
 ```
-To begin, wrap the root element of your application with the GridManager tag. Pass in the list of your grids, along with their orientation, and the intial grid you want to remote control to focus on. Grids are referenced by their id, which is a string.
+1. To begin, wrap the root element of your application with the GridManager tag. 
 
-### Grid & GridNode
+2. Next, pass in your config as a property. Your config should contain a list of all the routes that contain remote navigatable content. The route id should match the route path as defined in your React-Router config.
+
+	```Javascript
+	<Router history={hashHistory}>
+	  <Route onEnter={init}>
+	    <Route path="/" component={Main}>
+	      <Route path="gallery" component={GalleryPage}/>
+	      <Route path="details/:id" component={DetailsPage}/>
+	    </Route>
+	  </Route>
+	</Router>
+	```
+
+3. For each route, list each grid, along with their orientation, and the intial grid you want the remote control to focus on. Grids are referenced by their id, which is a string.
+
+### Grid
 
 ```Javascript
-import React from 'react';
-import ShowCard from 'common/show-card/show-card.jsx'
-import {Grid,GridNode} from 'lib/grid';
+<Grid gridId="nav" nodeCount={this.props.navItems.length}>
+  <ul>
+    {this.props.navItems.map( (navItem,key) => {
+      return (
+       <li key={key}>
+         <GridNode nodeId={key}>
+           <a href={navItem.href} >{navItem.name}</a>
+         </GridNode>
+       </li>
+    )})}
+ </ul>
+</Grid>
 
-export default React.createClass({
-  render() {
-    let show, href;
-    return (
-    <div className="show-list" >
-      <Grid gridId="gallery" rowLength="3" nodeLength={this.props.shows.length}>
-      {Object.keys(this.props.shows).map(key => {
-        show = this.props.shows[key];
-        return (
-          <GridNode nodeId={key} key={key}>
-           <ShowCard key={key} show={show}/>
-          </GridNode>
-         )}
-      )}
-    </Grid>
-  </div>)
-  }
-});
 ```
+ The collection of GridNodes must be wrapped in a Grid component, which must be passed a gridId which links it to a grid defined in the config object previously given to GridManager. When defining a grid, you must also specify the length of the rows along with the total number of nodes.
 
-Any link you want to be navigatable via remote must be wrapped in a GridNode component. This GridNode component must be passed an nodeId, and these nodeIds should be sequential. The collection of GridNodes must be wrapped in a Grid component, which must be passed a gridId which links it to a grid defined in the config object previously given to GridManager. When defining a grid, you must also specify the length of the rows along with the total number of nodes.
+
+###GridNode
+```Javascript
+ <GridNode nodeId={key}>
+   <a href={navItem.href} >{navItem.name}</a>
+ </GridNode>
+```                     
+
+Any link you want to be navigatable via remote must be wrapped in a GridNode component. This GridNode component must be passed an nodeId, and these nodeIds should be sequential.

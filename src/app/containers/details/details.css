@@ -6,8 +6,7 @@
 
 .details .details-column{
   float:left;
-  margin:25px;
-  border:1px solid black;
+  margin:31px;
   background:rgba(255,255,255,.2);
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
@@ -15,7 +14,7 @@
 
 /* Left */
 .details .details-column-left{
-  width:350px;
+  width:240px;
 }
 
 .details-titlebar{
@@ -40,7 +39,7 @@
 }
 
 .details .show-preview, .details .details-preview{
-  width:350px; height:200px;
+  width:240px; height:176px;
   overflow:hidden;
   background:black;
 }
