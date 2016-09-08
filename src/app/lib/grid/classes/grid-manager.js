@@ -73,7 +73,7 @@ export default class GridManager{
         if(rowLength && (currentNode + rowLength <= nodeCount - 1)){
           this.setCurrentNode(currentNode + rowLength);
         }else if(bottom != null){
-          this.changeGrid(bottom);
+          this.setCurrentGrid(bottom);
         }
         break;
     }

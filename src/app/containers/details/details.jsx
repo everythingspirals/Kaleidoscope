@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {Guide} from 'lib/guide/index.js';
 import Nav from 'common/nav/nav.jsx';
 import {Grid,GridNode} from 'lib/grid';
-import ShowPreview from 'common/show-preview/show-preview.jsx';
 import style from './details.css';
 
 
@@ -47,7 +46,7 @@ const Details = React.createClass({
 
           <div className="details-column details-column-left">
             <div className="details-preview">
-              <ShowPreview id={show.id} src={show.Preview}/>
+              <video ref="video" className="show-preview" src={show.Preview} autoplay></video>
             </div>
           </div>
 

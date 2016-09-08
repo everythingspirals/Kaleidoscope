@@ -9,10 +9,13 @@ export default React.createClass({
   },
 
   componentWillMount(){
-    let route = this.props.children.props.route.path;
-    this.gridManager = new GridManager(this.props.config);
-    this.gridManager.setCurrentRoute(route);
-    this.update();
+    console.log(this.props);
+    if(this.props.children){
+      let route = this.props.children.props.route.component.displayName;
+      this.gridManager = new GridManager(this.props.config);
+      this.gridManager.setCurrentRoute(route);
+      this.update();
+    }
   },
 
   componentWillUnmount(){

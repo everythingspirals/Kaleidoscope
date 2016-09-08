@@ -1,5 +1,4 @@
 import React from 'react';
-import ShowPreview from 'common/show-preview/show-preview.jsx';
 import style from './show-card.css';
 import {GridNode} from 'lib/grid';
 export default React.createClass({

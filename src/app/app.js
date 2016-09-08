@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import Store from 'redux/store';
 import {Provider} from 'react-redux';
-import {Router, Route, hashHistory, IndexRoute} from 'react-router';
+import {Router, Route, hashHistory, IndexRedirect} from 'react-router';
 
 //Internal
 import Main from 'containers/main/main.jsx';
@@ -29,9 +29,9 @@ ReactDom.render(
     <Router history={hashHistory}>
       <Route onEnter={init}>
         <Route path="/" component={Main}>
-          <IndexRoute component={GalleryPage}/>
+          <IndexRedirect to="gallery" />
           <Route path="gallery" component={GalleryPage}>
-            <IndexRoute component={ComedyPage}/>
+            <IndexRedirect to="trending" />
             <Route path="comedy" component={ComedyPage}/>
             <Route path="drama" component={DramaPage}/>
             <Route path="kids" component={KidsPage}/>

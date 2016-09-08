@@ -12,6 +12,7 @@ const Comedy = React.createClass({
   },
 
   componentWillMount(){
+    console.log("Mounting trending");
     this.getShows(this.props.guide);
   },
 

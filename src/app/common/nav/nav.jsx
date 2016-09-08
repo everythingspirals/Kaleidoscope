@@ -3,15 +3,14 @@ import {Grid,GridNode} from 'lib/grid';
 import style from './nav.css';
 
 export default React.createClass({
-    componentWillMount(){
-      console.log("mounting nav");
-    },
     render() {
+      let navItems = this.props.navItems;
+      
       return (
         <nav className="nav">
-            <Grid gridId={this.props.gridId} nodeCount={this.props.navItems.length}>
+            <Grid gridId={this.props.gridId} nodeCount={navItems.length}>
               <ul>
-                {this.props.navItems.map( (navItem,key) => {
+                {navItems.map( (navItem,key) => {
                   return (
                    <li key={key}>
                      <GridNode nodeId={key}>
