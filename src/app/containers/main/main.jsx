@@ -16,14 +16,16 @@ export default React.createClass({
               top:"show-list",
               right:null,
               bottom:null,
-              left:null
+              left:null,
+              persistState: true
             },
             {
               id:"show-list",
               top:null,
               right:null,
               bottom:"nav",
-              left:null
+              left:null,
+              persistState: false
             }
           ],
           initialGrid:"nav"
@@ -36,7 +38,8 @@ export default React.createClass({
               top:null,
               right:null,
               bottom:null,
-              left:null
+              left:null,
+              persistState: false
             }
           ],
           initialGrid:"details-nav"

@@ -15,12 +15,16 @@ const GridComponent = React.createClass({
   componentWillReceiveProps(nextProps){
     let gridManager = nextProps.gridManager,
         gridId = nextProps.gridId,
-        activeId = gridManager.getCurrentGrid().id;
+        activeId = gridManager.getCurrentGrid().id,
+        nodeCount = nextProps.nodeCount,
+        rowLength = nextProps.rowLength;
 
-    this.setActive(activeId, gridId);
+        this.setActive(gridId,activeId);
+        this.setSize(gridId,rowLength,nodeCount);
   },
 
   componentWillMount(){
+    console.log("Mounting");
     let gridManager = this.props.gridManager,
         gridId = this.props.gridId,
         rowLength = this.props.rowLength,
@@ -28,8 +32,12 @@ const GridComponent = React.createClass({
         currentGrid = gridManager.getCurrentGrid(),
         activeId = currentGrid.id;
 
-    this.setActive(activeId,gridId);
-    gridManager.setGridSize(gridId, rowLength, nodeCount);
+        this.setActive(gridId,activeId);
+        this.setSize(gridId,rowLength,nodeCount);
+  },
+
+  setSize(gridId, rowLength, nodeCount){
+    this.props.gridManager.setGridSize(gridId, rowLength, nodeCount);
 
     this.setState({
      rowLength: rowLength,

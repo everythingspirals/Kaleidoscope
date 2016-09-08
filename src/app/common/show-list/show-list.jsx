@@ -6,7 +6,6 @@ import {Grid} from 'lib/grid';
 export default React.createClass({
   render() {
     let show;
-    if(this.props.shows.length){
       return (
       <div className="show-list" >
         <Grid gridId="show-list" rowLength="4" nodeCount={this.props.shows.length}>
@@ -19,8 +18,5 @@ export default React.createClass({
           )}
         </Grid>
       </div>)
-    }else{
-      return (<div></div>)
-    }
   }
 });
