@@ -2,9 +2,13 @@ export default class Grid{
 
   //Constructor
   //----------------------------------------------------------------------------
-  constructor(id, route){
+  constructor(id, route, persistState){
+    //params
     this.id = id;
     this.route = route;
+    this.persistState = persistState;
+
+    //defaults
     this.nodeCount = null;
     this.rowLength = null;
     this.currentNode = 0;

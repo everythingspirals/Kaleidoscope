@@ -25,7 +25,7 @@ export default class GridManager{
       this.routes.push(newRoute);
 
       route.grids.forEach(grid => {
-        newGrid = new Grid(grid.id, route.id);
+        newGrid = new Grid(grid.id, route.id, route.persistState);
         newGrid.setOrientation(grid.top,grid.right,grid.bottom,grid.left);
         this.grids.push(newGrid);
       });
@@ -52,13 +52,15 @@ export default class GridManager{
       case 37://left
         if(currentNode > 0){
           this.setCurrentNode(currentNode - 1);
+        }else if(left !== null){
+          this.changeGrid(left);
         }
         break;
 
       case 38://up
         if(rowLength && (currentNode - rowLength >= 0)){
           this.setCurrentNode(currentNode - rowLength);
-        }else if(top != null){
+        }else if(top !== null){
           this.changeGrid(top);
         }
         break;
@@ -66,14 +68,16 @@ export default class GridManager{
       case 39://right
         if(currentNode < nodeCount - 1){
           this.setCurrentNode(currentNode + 1);
+        }else if(right !== null){
+          this.changeGrid(right);
         }
         break;
 
       case 40://down
         if(rowLength && (currentNode + rowLength <= nodeCount - 1)){
           this.setCurrentNode(currentNode + rowLength);
-        }else if(bottom != null){
-          this.setCurrentGrid(bottom);
+        }else if(bottom !== null){
+          this.changeGrid(bottom);
         }
         break;
     }
@@ -123,7 +127,11 @@ export default class GridManager{
 
   changeGrid(gridId){
     this.setCurrentGrid(gridId);
-    this.setCurrentNode(0);
+
+    let grid = this.getGridById(gridId);
+    if(!grid.persistState){
+      this.setCurrentNode(0);
+    }
   }
 
   setCurrentGrid(gridId){

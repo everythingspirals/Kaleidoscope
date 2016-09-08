@@ -22,7 +22,7 @@ const Comedy = React.createClass({
 
   getShows(guide) {
     if(guide.currentShows){
-      let shows = guide.getShowsByGenre("Drama");
+      let shows = guide.getShowsByRating();
 
       this.setState({
         shows : shows

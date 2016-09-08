@@ -19,9 +19,7 @@ export default class Guide{
       this.guideData = response.data;
       this.setCurrentShows();
       this.update();
-    }).catch(function (error) {
-      console.log(error);
-    });
+    })
   }
 
   setCurrentShows(){

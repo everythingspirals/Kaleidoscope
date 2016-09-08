@@ -4,17 +4,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.details .details-column{
-  float:left;
-  margin:31px;
+.details .details-description{
+  float:right;
+  margin:32px;
   background:rgba(255,255,255,.2);
-  border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
+  width:900px;
 }
 
-/* Left */
-.details .details-column-left{
-  width:240px;
+.details .show-preview{
+  margin:32px;
 }
 
 .details-titlebar{
@@ -29,7 +28,7 @@
 }
 
 .details-title{
-  height:80px; width:680px;
+  height:80px; width:810px;
   padding-left:15px;
   line-height:80px;
   font-size: 1.5rem;
@@ -38,17 +37,6 @@
   float:left;
 }
 
-.details .show-preview, .details .details-preview{
-  width:240px; height:176px;
-  overflow:hidden;
-  background:black;
-}
-
-/* Right */
-.details-column-right{
-  width:770px;
-
-}
 .details-info{
   padding:25px;
 }
@@ -56,8 +44,4 @@
 .details .details-info legend{
   font-size:24px;
   font-weight:bold;
-}
-
-.grid.active .grid-node.active .details-preview{
-  border: 1px solid red !important;
 }

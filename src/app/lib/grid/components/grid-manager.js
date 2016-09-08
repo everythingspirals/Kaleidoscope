@@ -9,9 +9,10 @@ export default React.createClass({
   },
 
   componentWillMount(){
-    console.log(this.props);
+
     if(this.props.children){
-      let route = this.props.children.props.route.component.displayName;
+      let route = this.props.children.props.route;
+      route = route.path ? route.path : route.component.displayName;
       this.gridManager = new GridManager(this.props.config);
       this.gridManager.setCurrentRoute(route);
       this.update();

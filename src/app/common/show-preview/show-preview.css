@@ -1,0 +1,9 @@
+.show-preview{
+  position:absolute;
+  top:0px;left:0;
+  width:240px;
+  height:176px;
+  z-index:0;
+  background:black;
+  box-shadow: 6px 7px 31px -1px rgba(0,0,0,0.75);
+}

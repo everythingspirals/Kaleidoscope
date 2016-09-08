@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import {Guide} from 'lib/guide/index.js';
 import Nav from 'common/nav/nav.jsx';
+import ShowPreview from 'common/show-preview/show-preview';
 import {Grid,GridNode} from 'lib/grid';
 import style from './details.css';
 
@@ -44,13 +45,9 @@ const Details = React.createClass({
       return (
         <div className="details">
 
-          <div className="details-column details-column-left">
-            <div className="details-preview">
-              <video ref="video" className="show-preview" src={show.Preview} autoplay></video>
-            </div>
-          </div>
+          <ShowPreview src={show.Preview}></ShowPreview>
 
-          <div className="details-column details-column-right">
+          <div className="details-description">
 
             <div className="details-titlebar">
               <div className="details-channel">
